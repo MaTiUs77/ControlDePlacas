@@ -1,0 +1,156 @@
+F:\Users\INSAUT\PLANTA_3\TECNICOS_3\Programacion\Software\Matias\Control_de_placas\Control_de_placas\bin\Debug\Control_de_placas.exe.config
+F:\Users\INSAUT\PLANTA_3\TECNICOS_3\Programacion\Software\Matias\Control_de_placas\Control_de_placas\bin\Debug\Control_de_placas.exe.manifest
+F:\Users\INSAUT\PLANTA_3\TECNICOS_3\Programacion\Software\Matias\Control_de_placas\Control_de_placas\bin\Debug\Control_de_placas.application
+F:\Users\INSAUT\PLANTA_3\TECNICOS_3\Programacion\Software\Matias\Control_de_placas\Control_de_placas\bin\Debug\Control_de_placas.exe
+F:\Users\INSAUT\PLANTA_3\TECNICOS_3\Programacion\Software\Matias\Control_de_placas\Control_de_placas\bin\Debug\Control_de_placas.pdb
+F:\Users\INSAUT\PLANTA_3\TECNICOS_3\Programacion\Software\Matias\Control_de_placas\Control_de_placas\obj\x86\Debug\ResolveAssemblyReference.cache
+F:\Users\INSAUT\PLANTA_3\TECNICOS_3\Programacion\Software\Matias\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.Form1.resources
+F:\Users\INSAUT\PLANTA_3\TECNICOS_3\Programacion\Software\Matias\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.formCalcularStoker.resources
+F:\Users\INSAUT\PLANTA_3\TECNICOS_3\Programacion\Software\Matias\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.formConfig.resources
+F:\Users\INSAUT\PLANTA_3\TECNICOS_3\Programacion\Software\Matias\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.formFiltro.resources
+F:\Users\INSAUT\PLANTA_3\TECNICOS_3\Programacion\Software\Matias\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.formInformeDiario.resources
+F:\Users\INSAUT\PLANTA_3\TECNICOS_3\Programacion\Software\Matias\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.formLotes.resources
+F:\Users\INSAUT\PLANTA_3\TECNICOS_3\Programacion\Software\Matias\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.formNotas.resources
+F:\Users\INSAUT\PLANTA_3\TECNICOS_3\Programacion\Software\Matias\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.formSplash.resources
+F:\Users\INSAUT\PLANTA_3\TECNICOS_3\Programacion\Software\Matias\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.Properties.Resources.resources
+F:\Users\INSAUT\PLANTA_3\TECNICOS_3\Programacion\Software\Matias\Control_de_placas\Control_de_placas\obj\x86\Debug\GenerateResource.read.1.tlog
+F:\Users\INSAUT\PLANTA_3\TECNICOS_3\Programacion\Software\Matias\Control_de_placas\Control_de_placas\obj\x86\Debug\GenerateResource.write.1.tlog
+F:\Users\INSAUT\PLANTA_3\TECNICOS_3\Programacion\Software\Matias\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.TrustInfo.xml
+F:\Users\INSAUT\PLANTA_3\TECNICOS_3\Programacion\Software\Matias\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.exe.manifest
+F:\Users\INSAUT\PLANTA_3\TECNICOS_3\Programacion\Software\Matias\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.application
+F:\Users\INSAUT\PLANTA_3\TECNICOS_3\Programacion\Software\Matias\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.exe
+F:\Users\INSAUT\PLANTA_3\TECNICOS_3\Programacion\Software\Matias\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.pdb
+E:\Visual Studio\Control_de_placas\Control_de_placas\bin\Debug\Control_de_placas.exe.config
+E:\Visual Studio\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.exe
+E:\Visual Studio\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.pdb
+E:\Visual Studio\Control_de_placas\Control_de_placas\bin\Debug\Control_de_placas.exe.manifest
+E:\Visual Studio\Control_de_placas\Control_de_placas\bin\Debug\Control_de_placas.application
+E:\Visual Studio\Control_de_placas\Control_de_placas\bin\Debug\Control_de_placas.exe
+E:\Visual Studio\Control_de_placas\Control_de_placas\bin\Debug\Control_de_placas.pdb
+E:\Visual Studio\Control_de_placas\Control_de_placas\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\Visual Studio\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.Form1.resources
+E:\Visual Studio\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.formCalcularStoker.resources
+E:\Visual Studio\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.formConfig.resources
+E:\Visual Studio\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.formFiltro.resources
+E:\Visual Studio\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.formInformeDiario.resources
+E:\Visual Studio\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.formLotes.resources
+E:\Visual Studio\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.formNotas.resources
+E:\Visual Studio\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.formSplash.resources
+E:\Visual Studio\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.Properties.Resources.resources
+E:\Visual Studio\Control_de_placas\Control_de_placas\obj\x86\Debug\GenerateResource.read.1.tlog
+E:\Visual Studio\Control_de_placas\Control_de_placas\obj\x86\Debug\GenerateResource.write.1.tlog
+E:\Visual Studio\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.TrustInfo.xml
+E:\Visual Studio\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.exe.manifest
+E:\Visual Studio\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.application
+E:\Visual Studio\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.formUsuario.resources
+C:\Users\usuario\Desktop\Matias\SOFTWARE\Control_de_placas\Control_de_placas\bin\Debug\Control_de_placas.exe.config
+C:\Users\usuario\Desktop\Matias\SOFTWARE\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.exe
+C:\Users\usuario\Desktop\Matias\SOFTWARE\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.pdb
+C:\Users\usuario\Desktop\Matias\SOFTWARE\Control_de_placas\Control_de_placas\bin\Debug\Control_de_placas.exe.manifest
+C:\Users\usuario\Desktop\Matias\SOFTWARE\Control_de_placas\Control_de_placas\bin\Debug\Control_de_placas.application
+C:\Users\usuario\Desktop\Matias\SOFTWARE\Control_de_placas\Control_de_placas\bin\Debug\Control_de_placas.exe
+C:\Users\usuario\Desktop\Matias\SOFTWARE\Control_de_placas\Control_de_placas\bin\Debug\Control_de_placas.pdb
+C:\Users\usuario\Desktop\Matias\SOFTWARE\Control_de_placas\Control_de_placas\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\usuario\Desktop\Matias\SOFTWARE\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.Form1.resources
+C:\Users\usuario\Desktop\Matias\SOFTWARE\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.formCalcularStoker.resources
+C:\Users\usuario\Desktop\Matias\SOFTWARE\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.formConfig.resources
+C:\Users\usuario\Desktop\Matias\SOFTWARE\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.formFiltro.resources
+C:\Users\usuario\Desktop\Matias\SOFTWARE\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.formInformeDiario.resources
+C:\Users\usuario\Desktop\Matias\SOFTWARE\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.formLotes.resources
+C:\Users\usuario\Desktop\Matias\SOFTWARE\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.formNotas.resources
+C:\Users\usuario\Desktop\Matias\SOFTWARE\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.formSplash.resources
+C:\Users\usuario\Desktop\Matias\SOFTWARE\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.formUsuario.resources
+C:\Users\usuario\Desktop\Matias\SOFTWARE\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.Properties.Resources.resources
+C:\Users\usuario\Desktop\Matias\SOFTWARE\Control_de_placas\Control_de_placas\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\usuario\Desktop\Matias\SOFTWARE\Control_de_placas\Control_de_placas\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\usuario\Desktop\Matias\SOFTWARE\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.TrustInfo.xml
+C:\Users\usuario\Desktop\Matias\SOFTWARE\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.exe.manifest
+C:\Users\usuario\Desktop\Matias\SOFTWARE\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.application
+C:\Users\usuario\Desktop\Matias\SOFTWARE\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.formEstadistica.resources
+C:\Users\usuario\Desktop\Matias\SOFTWARE\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.Seguimiento.resources
+C:\Users\usuario\Desktop\Matias\SOFTWARE\Control_de_placas\Control_de_placas\bin\Debug\GenCode128.dll
+C:\Users\usuario\Desktop\Matias\SOFTWARE\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.Scan.resources
+C:\Users\usuario\Desktop\Matias\SOFTWARE\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.formScrap.resources
+C:\Users\mflores\Desktop\VISUALSTUDIO\SOFTWARE\Control_de_placas\Control_de_placas\bin\Debug\Control_de_placas.exe.config
+C:\Users\mflores\Desktop\VISUALSTUDIO\SOFTWARE\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.exe
+C:\Users\mflores\Desktop\VISUALSTUDIO\SOFTWARE\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.pdb
+C:\Users\mflores\Desktop\VISUALSTUDIO\SOFTWARE\Control_de_placas\Control_de_placas\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\mflores\Desktop\VISUALSTUDIO\SOFTWARE\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.Form1.resources
+C:\Users\mflores\Desktop\VISUALSTUDIO\SOFTWARE\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.formCalcularStoker.resources
+C:\Users\mflores\Desktop\VISUALSTUDIO\SOFTWARE\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.formConfig.resources
+C:\Users\mflores\Desktop\VISUALSTUDIO\SOFTWARE\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.formEstadistica.resources
+C:\Users\mflores\Desktop\VISUALSTUDIO\SOFTWARE\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.formFiltro.resources
+C:\Users\mflores\Desktop\VISUALSTUDIO\SOFTWARE\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.formInformeDiario.resources
+C:\Users\mflores\Desktop\VISUALSTUDIO\SOFTWARE\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.formLotes.resources
+C:\Users\mflores\Desktop\VISUALSTUDIO\SOFTWARE\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.formNotas.resources
+C:\Users\mflores\Desktop\VISUALSTUDIO\SOFTWARE\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.formScrap.resources
+C:\Users\mflores\Desktop\VISUALSTUDIO\SOFTWARE\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.formSplash.resources
+C:\Users\mflores\Desktop\VISUALSTUDIO\SOFTWARE\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.formUsuario.resources
+C:\Users\mflores\Desktop\VISUALSTUDIO\SOFTWARE\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.Properties.Resources.resources
+C:\Users\mflores\Desktop\VISUALSTUDIO\SOFTWARE\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.Scan.resources
+C:\Users\mflores\Desktop\VISUALSTUDIO\SOFTWARE\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.Seguimiento.resources
+C:\Users\mflores\Desktop\VISUALSTUDIO\SOFTWARE\Control_de_placas\Control_de_placas\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\mflores\Desktop\VISUALSTUDIO\SOFTWARE\Control_de_placas\Control_de_placas\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\mflores\Desktop\VISUALSTUDIO\SOFTWARE\Control_de_placas\Control_de_placas\bin\Debug\Control_de_placas.exe.manifest
+C:\Users\mflores\Desktop\VISUALSTUDIO\SOFTWARE\Control_de_placas\Control_de_placas\bin\Debug\Control_de_placas.application
+C:\Users\mflores\Desktop\VISUALSTUDIO\SOFTWARE\Control_de_placas\Control_de_placas\bin\Debug\Control_de_placas.exe
+C:\Users\mflores\Desktop\VISUALSTUDIO\SOFTWARE\Control_de_placas\Control_de_placas\bin\Debug\Control_de_placas.pdb
+C:\Users\mflores\Desktop\VISUALSTUDIO\SOFTWARE\Control_de_placas\Control_de_placas\bin\Debug\GenCode128.dll
+C:\Users\mflores\Desktop\VISUALSTUDIO\SOFTWARE\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.TrustInfo.xml
+C:\Users\mflores\Desktop\VISUALSTUDIO\SOFTWARE\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.exe.manifest
+C:\Users\mflores\Desktop\VISUALSTUDIO\SOFTWARE\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.application
+C:\Users\mflores\Desktop\VISUALSTUDIO\SOFTWARE\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.formAcercade.resources
+C:\Users\mflores\Desktop\VISUALSTUDIO\SOFTWARE\Control_de_placas\Control_de_placas\obj\x86\Debug\GenerateResource.write.672.tlog
+C:\Users\mflores\Desktop\VISUALSTUDIO\SOFTWARE\Control_de_placas\Control_de_placas\obj\x86\Debug\GenerateResource.read.661.tlog
+C:\Users\mflores\Desktop\VISUALSTUDIO\SOFTWARE\Control_de_placas\Control_de_placas\obj\x86\Debug\GenerateResource.write.661.tlog
+C:\Users\mflores\Desktop\VISUALSTUDIO\SOFTWARE\Control_de_placas\Control_de_placas\obj\x86\Debug\GenerateResource.write.1255.tlog
+C:\Users\mflores\Desktop\VISUALSTUDIO\SOFTWARE\Control_de_placas\Control_de_placas\obj\x86\Debug\GenerateResource.write.1550.tlog
+C:\Users\mflores\Desktop\VISUALSTUDIO\SOFTWARE\Control_de_placas\Control_de_placas\obj\x86\Debug\GenerateResource.write.1641.tlog
+C:\Users\mflores\Desktop\VISUALSTUDIO\SOFTWARE\Control_de_placas\Control_de_placas\obj\x86\Debug\GenerateResource.write.1688.tlog
+C:\Users\mflores\Desktop\VISUALSTUDIO\SOFTWARE\Control_de_placas\Control_de_placas\obj\x86\Debug\GenerateResource.read.1640.tlog
+C:\Users\mflores\Desktop\VISUALSTUDIO\SOFTWARE\Control_de_placas\Control_de_placas\obj\x86\Debug\GenerateResource.read.1642.tlog
+C:\Users\mflores\Desktop\VISUALSTUDIO\SOFTWARE\Control_de_placas\Control_de_placas\obj\x86\Debug\GenerateResource.write.1640.tlog
+C:\Users\mflores\Desktop\VISUALSTUDIO\SOFTWARE\Control_de_placas\Control_de_placas\obj\x86\Debug\GenerateResource.write.1849.tlog
+C:\Users\mflores\Desktop\VISUALSTUDIO\SOFTWARE\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.formSolicitarReproceso.resources
+C:\Users\mflores\Desktop\VISUALSTUDIO\_FABRICA_\Control_de_placas\Control_de_placas\bin\Debug\Control_de_placas.exe.config
+C:\Users\mflores\Desktop\VISUALSTUDIO\_FABRICA_\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.exe
+C:\Users\mflores\Desktop\VISUALSTUDIO\_FABRICA_\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.pdb
+C:\Users\mflores\Desktop\VISUALSTUDIO\_FABRICA_\Control_de_placas\Control_de_placas\bin\Debug\Control_de_placas.exe.manifest
+C:\Users\mflores\Desktop\VISUALSTUDIO\_FABRICA_\Control_de_placas\Control_de_placas\bin\Debug\Control_de_placas.application
+C:\Users\mflores\Desktop\VISUALSTUDIO\_FABRICA_\Control_de_placas\Control_de_placas\bin\Debug\Control_de_placas.exe
+C:\Users\mflores\Desktop\VISUALSTUDIO\_FABRICA_\Control_de_placas\Control_de_placas\bin\Debug\Control_de_placas.pdb
+C:\Users\mflores\Desktop\VISUALSTUDIO\_FABRICA_\Control_de_placas\Control_de_placas\bin\Debug\GenCode128.dll
+C:\Users\mflores\Desktop\VISUALSTUDIO\_FABRICA_\Control_de_placas\Control_de_placas\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\mflores\Desktop\VISUALSTUDIO\_FABRICA_\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.Form1.resources
+C:\Users\mflores\Desktop\VISUALSTUDIO\_FABRICA_\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.formAcercade.resources
+C:\Users\mflores\Desktop\VISUALSTUDIO\_FABRICA_\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.formCalcularStoker.resources
+C:\Users\mflores\Desktop\VISUALSTUDIO\_FABRICA_\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.formConfig.resources
+C:\Users\mflores\Desktop\VISUALSTUDIO\_FABRICA_\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.formEstadistica.resources
+C:\Users\mflores\Desktop\VISUALSTUDIO\_FABRICA_\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.formFiltro.resources
+C:\Users\mflores\Desktop\VISUALSTUDIO\_FABRICA_\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.formInformeDiario.resources
+C:\Users\mflores\Desktop\VISUALSTUDIO\_FABRICA_\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.formLotes.resources
+C:\Users\mflores\Desktop\VISUALSTUDIO\_FABRICA_\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.formNotas.resources
+C:\Users\mflores\Desktop\VISUALSTUDIO\_FABRICA_\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.formScrap.resources
+C:\Users\mflores\Desktop\VISUALSTUDIO\_FABRICA_\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.formSolicitarReproceso.resources
+C:\Users\mflores\Desktop\VISUALSTUDIO\_FABRICA_\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.formSplash.resources
+C:\Users\mflores\Desktop\VISUALSTUDIO\_FABRICA_\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.formUsuario.resources
+C:\Users\mflores\Desktop\VISUALSTUDIO\_FABRICA_\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.Properties.Resources.resources
+C:\Users\mflores\Desktop\VISUALSTUDIO\_FABRICA_\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.Scan.resources
+C:\Users\mflores\Desktop\VISUALSTUDIO\_FABRICA_\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.Seguimiento.resources
+C:\Users\mflores\Desktop\VISUALSTUDIO\_FABRICA_\Control_de_placas\Control_de_placas\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\mflores\Desktop\VISUALSTUDIO\_FABRICA_\Control_de_placas\Control_de_placas\obj\x86\Debug\GenerateResource.read.1640.tlog
+C:\Users\mflores\Desktop\VISUALSTUDIO\_FABRICA_\Control_de_placas\Control_de_placas\obj\x86\Debug\GenerateResource.read.1642.tlog
+C:\Users\mflores\Desktop\VISUALSTUDIO\_FABRICA_\Control_de_placas\Control_de_placas\obj\x86\Debug\GenerateResource.read.661.tlog
+C:\Users\mflores\Desktop\VISUALSTUDIO\_FABRICA_\Control_de_placas\Control_de_placas\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\mflores\Desktop\VISUALSTUDIO\_FABRICA_\Control_de_placas\Control_de_placas\obj\x86\Debug\GenerateResource.write.1255.tlog
+C:\Users\mflores\Desktop\VISUALSTUDIO\_FABRICA_\Control_de_placas\Control_de_placas\obj\x86\Debug\GenerateResource.write.1550.tlog
+C:\Users\mflores\Desktop\VISUALSTUDIO\_FABRICA_\Control_de_placas\Control_de_placas\obj\x86\Debug\GenerateResource.write.1640.tlog
+C:\Users\mflores\Desktop\VISUALSTUDIO\_FABRICA_\Control_de_placas\Control_de_placas\obj\x86\Debug\GenerateResource.write.1641.tlog
+C:\Users\mflores\Desktop\VISUALSTUDIO\_FABRICA_\Control_de_placas\Control_de_placas\obj\x86\Debug\GenerateResource.write.1688.tlog
+C:\Users\mflores\Desktop\VISUALSTUDIO\_FABRICA_\Control_de_placas\Control_de_placas\obj\x86\Debug\GenerateResource.write.1849.tlog
+C:\Users\mflores\Desktop\VISUALSTUDIO\_FABRICA_\Control_de_placas\Control_de_placas\obj\x86\Debug\GenerateResource.write.661.tlog
+C:\Users\mflores\Desktop\VISUALSTUDIO\_FABRICA_\Control_de_placas\Control_de_placas\obj\x86\Debug\GenerateResource.write.672.tlog
+C:\Users\mflores\Desktop\VISUALSTUDIO\_FABRICA_\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.TrustInfo.xml
+C:\Users\mflores\Desktop\VISUALSTUDIO\_FABRICA_\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.exe.manifest
+C:\Users\mflores\Desktop\VISUALSTUDIO\_FABRICA_\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.application
+C:\Users\mflores\Desktop\VISUALSTUDIO\_FABRICA_\Control_de_placas\Control_de_placas\obj\x86\Debug\Control_de_placas.FormEditar.resources
