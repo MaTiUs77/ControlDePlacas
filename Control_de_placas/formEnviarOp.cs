@@ -61,13 +61,23 @@ namespace Control_de_placas
             {
                 int cantidad = int.Parse(inCantidad.Text);
                 // Inserto y reseteo formulario
-                Sql.InsertarDato(op.modelo, op.lote, op.panel, cantidad, id_destino, op.op, "manual", op.semielaborado);
+                Sql.InsertarDato(
+                    op.service.smt.modelo, 
+                    op.service.smt.lote, 
+                    op.service.smt.panel, 
+                    cantidad, id_destino, 
+                    op.service.smt.op, 
+                    "manual", 
+                    op.service.wip.wip_ot.codigo_producto
+                );
 
                 Form1 form = parent as Form1;
                 form.reloadMainGrid();
                 this.Close();
+            } else
+            {
+                MessageBox.Show("No ingreso la cantidad de placas a enviar");
             }
-
         }
 
         private void insertar_Click(object sender, EventArgs e)
@@ -79,38 +89,45 @@ namespace Control_de_placas
         {
             if (e.KeyCode == Keys.Enter)
             {
-                op = new OP();
-                op.getInfo(inOp.Text.ToString());
-
-                if(op.modelo!=null)
+                try
                 {
-                    // Carga modelo lote panel y op en palet 
-                    detailOp.Text = string.Concat(
-                        "OP: ",
-                        op.op,
-                            System.Environment.NewLine,
-                        "Modelo: ",
-                        op.modelo,
-                            System.Environment.NewLine,
-                        "Lote: ",
-                        op.lote,
-                            System.Environment.NewLine,
-                        "Panel: ",
-                        op.panel,
-                            System.Environment.NewLine,
-                        "Semielaborado: ",
-                        op.semielaborado);
+                    op = new OP();
+                    op.getInfo(inOp.Text.ToString());
+                    if (op.exception == null)
+                    {
+                        if (op.service.smt != null)
+                        {
+                            // Carga modelo lote panel y op en palet 
+                            detailOp.Text = string.Concat(
+                                "OP: ",
+                                op.service.smt.op,
+                                    System.Environment.NewLine,
+                                "Modelo: ",
+                                op.service.smt.modelo,
+                                    System.Environment.NewLine,
+                                "Lote: ",
+                                op.service.smt.lote,
+                                    System.Environment.NewLine,
+                                "Panel: ",
+                                op.service.smt.panel,
+                                    System.Environment.NewLine,
+                                "Semielaborado: ",
+                                op.service.wip.wip_ot.codigo_producto);
 
-                    btnFinish.Enabled = true;
-                    inCantidad.Enabled = true;
-                }
-                else
+                            btnFinish.Enabled = true;
+                            inCantidad.Enabled = true;
+                        }
+                        else
+                        {
+                            MessageBox.Show("No fue posible obtener datos de OP");
+                            btnFinish.Enabled = false;
+                            inCantidad.Enabled = false;
+                        }
+                    }
+                } catch (Exception ex)
                 {
-                    MessageBox.Show("No fue posible obtener datos de OP");
-                    btnFinish.Enabled = false;
-                    inCantidad.Enabled = false;
+                    MessageBox.Show(ex.Message);
                 }
-
 
             }
         }

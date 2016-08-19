@@ -21,12 +21,13 @@ namespace Control_de_placas
 
         public void Init(Stocker stocker) {
             // Cargo por primera vez
-            modelo = stocker.modelo;
-            lote = stocker.lote;
-            panel = stocker.panel;
-            op = stocker.op;
-            barcode = stocker.barcode;
-            semielaborado = stocker.semielaborado;
+            modelo = stocker.service.smt.modelo;
+            lote = stocker.service.smt.lote;
+            panel = stocker.service.smt.panel;
+
+            op = stocker.service.stocker.op;
+            barcode = stocker.service.stocker.barcode;
+            semielaborado = stocker.service.stocker.semielaborado;
 
             started = true;
         }
@@ -36,8 +37,8 @@ namespace Control_de_placas
             stockerList.Add(stocker);
         }
 
-        public int SumarUnidades() {
-            int total = stockerList.AsEnumerable().Sum(s => s.unidades);
+        public int? SumarUnidades() {
+            int? total = stockerList.AsEnumerable().Sum(s => s.service.stocker.unidades);
             return total;
         }
 
@@ -53,9 +54,9 @@ namespace Control_de_placas
             return total;
         }
 
-        public bool OnList(Stocker stocker)
+        public bool OnList(Stocker currStocker)
         {
-            IEnumerable<Stocker> result = stockerList.Where(s => s.barcode == stocker.barcode);
+            IEnumerable<Stocker> result = stockerList.Where(s => s.service.stocker.barcode== currStocker.service.stocker.barcode);
             if (result.Count() == 0)
             {
                 return false;
@@ -70,7 +71,7 @@ namespace Control_de_placas
         {
             foreach (Stocker stocker in stockerList)
             {
-                Stocker.enviado(stocker.barcode);
+                Stocker.enviado(stocker.service.stocker.barcode);
             }
         }
     }

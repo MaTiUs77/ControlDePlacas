@@ -49,8 +49,8 @@ namespace Control_de_placas
             {
 
                 int index = dataPalet.Rows.Add(
-                    stk.barcode,
-                    stk.unidades
+                    stk.service.stocker.barcode,
+                    stk.service.stocker.unidades
                 );
 
                 // Agrego indice de fila a stocker.
@@ -60,13 +60,13 @@ namespace Control_de_placas
                 // Carga modelo lote panel y op en palet 
                 detailPalet.Text = string.Concat(
                     "Modelo: ",
-                    stk.modelo, 
+                    stk.service.smt.modelo, 
                         System.Environment.NewLine, 
                     "Lote: ",
-                    stk.lote,
+                    stk.service.smt.lote,
                         System.Environment.NewLine,
                     "Panel: ",
-                    stk.panel,
+                    stk.service.smt.panel,
                         System.Environment.NewLine,
                     "Unidades: ",
                     palet.SumarUnidades());
@@ -84,38 +84,45 @@ namespace Control_de_placas
                 try
                 {
                     stocker.getInfo(inStockerCode);
-                    if (stocker.error == null)
+                    if (stocker.exception == null)
                     {
-                        if (stocker.unidades > 0)
+                        if (stocker.service.stocker.error == null)
                         {
-                            if (!palet.started) {
-                                // Cargo palet con datos de primer stocker.
-                                palet.Init(stocker);
-                                btnFinish.Enabled = true;
-                            }
-
-                            if (
-                                stocker.modelo == palet.modelo &&
-                                stocker.lote == palet.lote &&
-                                stocker.panel == palet.panel &&
-                                stocker.op == palet.op
-                            )
+                            if (stocker.service.stocker.unidades > 0)
                             {
-                                AddToPalet(stocker);
+                                if (!palet.started)
+                                {
+                                    // Cargo palet con datos de primer stocker.
+                                    palet.Init(stocker);
+                                    btnFinish.Enabled = true;
+                                }
+
+                                if (
+                                    stocker.service.smt.modelo == palet.modelo &&
+                                    stocker.service.smt.lote == palet.lote &&
+                                    stocker.service.smt.panel == palet.panel &&
+                                    stocker.service.stocker.op == palet.op
+                                )
+                                {
+                                    AddToPalet(stocker);
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Atencion, el stocker (" + stocker.service.stocker.barcode + ") tiene un modelo/op diferente.");
+                                }
                             }
                             else
                             {
-                                MessageBox.Show("Atencion, el stocker ("+stocker.barcode+") tiene un modelo/op diferente.");
+                                MessageBox.Show("El stocker no contiene placas.");
                             }
-                        }
-                        else
+                        } else
                         {
-                            MessageBox.Show("El stocker no contiene placas. NOTA: Una vez registrado el envio, se elimina toda informacion relacionada al stocker.");
+                            MessageBox.Show(stocker.service.stocker.error);
                         }
                     }
                     else
                     {
-                        MessageBox.Show(stocker.error);
+                        MessageBox.Show(stocker.exception);
                     }
                 }
                 catch (Exception ex)
@@ -177,7 +184,7 @@ namespace Control_de_placas
             string inStockerCode = txtBarcode.Text.Trim().ToUpper();
             if (inStockerCode != "")
             {
-                IEnumerable<Stocker> stocker = palet.stockerList.Where(s => s.barcode == inStockerCode );
+                IEnumerable<Stocker> stocker = palet.stockerList.Where(s => s.service.stocker.barcode == inStockerCode );
                 if (stocker.Count()>0) {
                     stockerSuccess(stocker.First());
                 }

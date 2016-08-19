@@ -9,7 +9,7 @@ namespace Control_de_placas
     class Sql
     {
         // Inserta en la DB una salida de stocker
-        public static bool InsertarDato(string modelo, string lote, string placa, int cantidad, int id_destino, string op, string stocker_barcode, string semielaborado)
+        public static bool InsertarDato(string modelo, string lote, string placa, int? cantidad, int id_destino, string op, string stocker_barcode, string semielaborado)
         {
             Mysql sql = new Mysql();
             bool rs = sql.Ejecutar(@"INSERT INTO `datos` (`id`, `modelo`, `lote`, `placa`, `cantidad`, `fecha`, `hora`, `ebs`, `id_turno`, `id_sector`, `id_destino`, `op`, `stocker`, `semielaborado`) VALUES 

@@ -141,6 +141,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "formEnviarOp";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Enviar OP";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.formEnviarOp_Load);

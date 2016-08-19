@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Data.OleDb;
 using System.Deployment.Application;
+using IAServerServiceDll;
 
 namespace Control_de_placas
 {
@@ -46,6 +47,8 @@ namespace Control_de_placas
         // Muestro/Oculto opciones segun permiso de usuario
         public void startMain()
         {
+            IAServerService.url = Util.AppSettingValue("service");
+
             hideDeclaracionBox();
             toggleAvailableOptions();
             reloadMainGrid();

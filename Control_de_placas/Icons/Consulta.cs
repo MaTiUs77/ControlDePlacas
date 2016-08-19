@@ -30,7 +30,8 @@ d.id
     and lote = d.lote
     and placa = d.placa
     and id_sector = d.id_sector
-    GROUP BY modelo,lote,placa,id_sector
+    and op = d.op
+    GROUP BY modelo,lote,placa,id_sector, op
 ) AS salidas
 
 ,(
@@ -41,7 +42,8 @@ d.id
     and lote = d.lote
     and placa = d.placa
     and id_sector = d.id_sector
-    GROUP BY modelo,lote,placa,id_sector
+    and op = d.op
+    GROUP BY modelo,lote,placa,id_sector, op
 ) as restantes
 
 ,(
