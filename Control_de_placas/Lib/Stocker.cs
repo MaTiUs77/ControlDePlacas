@@ -11,28 +11,54 @@ namespace Control_de_placas
     {
         public int row;
         public bool confirm = false;
+        public bool isDeclared = false;
         public string exception;
-        public StockerDeclaredMapper service;
 
-        public StockerDeclaredMapper getInfo(string stocker_barcode)
+        public StockerMapper info;
+        public StockerDeclaredMapper declared;
+
+        public StockerMapper getInfo(string stocker_barcode)
         {
             try
             {
                 IAServerService ias = new IAServerService();
-                service = ias.GetStockerDeclaredInfo(stocker_barcode);
+                info = ias.GetStockerInfo(stocker_barcode);
                 if(ias.error!=null)
                 {
                     throw ias.error;
                 } else
                 {
-                    return service;
+                    return info;
                 }
             } catch(Exception ex)
             {
                 exception = ex.Message;
             }
 
-            return service;
+            return info;
+        }
+
+        public StockerDeclaredMapper getDeclaredInfo()
+        {
+            try
+            {
+                IAServerService ias = new IAServerService();
+                declared = ias.GetStockerDeclaredInfo(info.stocker.barcode);
+                if (ias.error != null)
+                {
+                    throw ias.error;
+                }
+                else
+                {
+                    return declared;
+                }
+            }
+            catch (Exception ex)
+            {
+                exception = ex.Message;
+            }
+
+            return declared;
         }
 
         public static StockerMapper enviado(string stocker_barcode)

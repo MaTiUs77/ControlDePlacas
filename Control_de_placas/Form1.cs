@@ -178,7 +178,7 @@ namespace Control_de_placas
                 int r = mainGrid.Rows.Add(
                     d["ebs"].ToString(),
                     d["id"].ToString(),
-                    d["id_lote"].ToString(),
+                    "",
                     d["op"].ToString(),
                     d["stocker"].ToString(),
                     d["semielaborado"].ToString(),

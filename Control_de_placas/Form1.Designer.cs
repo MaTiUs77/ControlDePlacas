@@ -50,6 +50,20 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.refrescarMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.enviarOPMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.paletizarMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.filtroMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.filtroMenuItem_nuevo = new System.Windows.Forms.ToolStripMenuItem();
+            this.filtroMenuItem_codigo = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.filtroMenuItem_quitar = new System.Windows.Forms.ToolStripMenuItem();
+            this.recepcionarMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lotesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reprocesoMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reprocesoMenuItem_solicitar = new System.Windows.Forms.ToolStripMenuItem();
+            this.reprocesoMenuItem_recepcionar = new System.Windows.Forms.ToolStripMenuItem();
+            this.reprocesoMenuItem_enviar = new System.Windows.Forms.ToolStripMenuItem();
             this.administracionMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administracionMenuItem_configuracion = new System.Windows.Forms.ToolStripMenuItem();
             this.acercadeMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -120,20 +134,6 @@
             this.toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.status_servidor = new System.Windows.Forms.ToolStripStatusLabel();
-            this.refrescarMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.enviarOPMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.paletizarMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.filtroMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.filtroMenuItem_nuevo = new System.Windows.Forms.ToolStripMenuItem();
-            this.filtroMenuItem_codigo = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-            this.filtroMenuItem_quitar = new System.Windows.Forms.ToolStripMenuItem();
-            this.recepcionarMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lotesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reprocesoMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reprocesoMenuItem_solicitar = new System.Windows.Forms.ToolStripMenuItem();
-            this.reprocesoMenuItem_recepcionar = new System.Windows.Forms.ToolStripMenuItem();
-            this.reprocesoMenuItem_enviar = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.iniPanel.SuspendLayout();
             this.mainTab.SuspendLayout();
@@ -170,6 +170,123 @@
             this.menuStrip1.Size = new System.Drawing.Size(1174, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // refrescarMenuItem
+            // 
+            this.refrescarMenuItem.Image = global::Control_de_placas.Properties.Resources.ico_recarga;
+            this.refrescarMenuItem.Name = "refrescarMenuItem";
+            this.refrescarMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
+            this.refrescarMenuItem.Size = new System.Drawing.Size(83, 20);
+            this.refrescarMenuItem.Text = "Refrescar";
+            this.refrescarMenuItem.Click += new System.EventHandler(this.refrescarMenuItem_Click);
+            // 
+            // enviarOPMenuItem
+            // 
+            this.enviarOPMenuItem.Image = global::Control_de_placas.Properties.Resources.calculator;
+            this.enviarOPMenuItem.Name = "enviarOPMenuItem";
+            this.enviarOPMenuItem.Size = new System.Drawing.Size(86, 20);
+            this.enviarOPMenuItem.Text = "Enviar OP";
+            this.enviarOPMenuItem.Visible = false;
+            this.enviarOPMenuItem.Click += new System.EventHandler(this.enviarOpMenuItem_Click);
+            // 
+            // paletizarMenuItem
+            // 
+            this.paletizarMenuItem.Image = global::Control_de_placas.Properties.Resources.recepcion_icon_;
+            this.paletizarMenuItem.Name = "paletizarMenuItem";
+            this.paletizarMenuItem.Size = new System.Drawing.Size(79, 20);
+            this.paletizarMenuItem.Text = "Paletizar";
+            this.paletizarMenuItem.Click += new System.EventHandler(this.paletizarMenuItem_Click);
+            // 
+            // filtroMenuItem
+            // 
+            this.filtroMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.filtroMenuItem_nuevo,
+            this.filtroMenuItem_codigo,
+            this.toolStripMenuItem1,
+            this.filtroMenuItem_quitar});
+            this.filtroMenuItem.Image = global::Control_de_placas.Properties.Resources.magnifier;
+            this.filtroMenuItem.Name = "filtroMenuItem";
+            this.filtroMenuItem.Size = new System.Drawing.Size(62, 20);
+            this.filtroMenuItem.Text = "Filtro";
+            // 
+            // filtroMenuItem_nuevo
+            // 
+            this.filtroMenuItem_nuevo.Name = "filtroMenuItem_nuevo";
+            this.filtroMenuItem_nuevo.ShortcutKeys = System.Windows.Forms.Keys.F6;
+            this.filtroMenuItem_nuevo.Size = new System.Drawing.Size(186, 22);
+            this.filtroMenuItem_nuevo.Text = "Nuevo";
+            this.filtroMenuItem_nuevo.Click += new System.EventHandler(this.filtroMenuItem_nuevo_Click);
+            // 
+            // filtroMenuItem_codigo
+            // 
+            this.filtroMenuItem_codigo.Name = "filtroMenuItem_codigo";
+            this.filtroMenuItem_codigo.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
+            this.filtroMenuItem_codigo.Size = new System.Drawing.Size(186, 22);
+            this.filtroMenuItem_codigo.Text = "Filtrar Codigo";
+            this.filtroMenuItem_codigo.Click += new System.EventHandler(this.filtroMenuItem_codigo_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(183, 6);
+            // 
+            // filtroMenuItem_quitar
+            // 
+            this.filtroMenuItem_quitar.Name = "filtroMenuItem_quitar";
+            this.filtroMenuItem_quitar.ShortcutKeys = System.Windows.Forms.Keys.Delete;
+            this.filtroMenuItem_quitar.Size = new System.Drawing.Size(186, 22);
+            this.filtroMenuItem_quitar.Text = "Quitar";
+            this.filtroMenuItem_quitar.Click += new System.EventHandler(this.filtroMenuItem_quitar_Click);
+            // 
+            // recepcionarMenuItem
+            // 
+            this.recepcionarMenuItem.Image = global::Control_de_placas.Properties.Resources.recepcion_icon__;
+            this.recepcionarMenuItem.Name = "recepcionarMenuItem";
+            this.recepcionarMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
+            this.recepcionarMenuItem.Size = new System.Drawing.Size(100, 20);
+            this.recepcionarMenuItem.Text = "Recepcionar";
+            this.recepcionarMenuItem.Click += new System.EventHandler(this.recepcionarMenuItem_Click);
+            // 
+            // lotesMenuItem
+            // 
+            this.lotesMenuItem.Image = global::Control_de_placas.Properties.Resources.history;
+            this.lotesMenuItem.Name = "lotesMenuItem";
+            this.lotesMenuItem.Size = new System.Drawing.Size(63, 20);
+            this.lotesMenuItem.Text = "Lotes";
+            this.lotesMenuItem.Visible = false;
+            this.lotesMenuItem.Click += new System.EventHandler(this.lotesMenuItem_Click);
+            // 
+            // reprocesoMenuItem
+            // 
+            this.reprocesoMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.reprocesoMenuItem_solicitar,
+            this.reprocesoMenuItem_recepcionar,
+            this.reprocesoMenuItem_enviar});
+            this.reprocesoMenuItem.Image = global::Control_de_placas.Properties.Resources.config;
+            this.reprocesoMenuItem.Name = "reprocesoMenuItem";
+            this.reprocesoMenuItem.Size = new System.Drawing.Size(90, 20);
+            this.reprocesoMenuItem.Text = "Reproceso";
+            // 
+            // reprocesoMenuItem_solicitar
+            // 
+            this.reprocesoMenuItem_solicitar.Name = "reprocesoMenuItem_solicitar";
+            this.reprocesoMenuItem_solicitar.Size = new System.Drawing.Size(139, 22);
+            this.reprocesoMenuItem_solicitar.Text = "Solicitar";
+            this.reprocesoMenuItem_solicitar.Click += new System.EventHandler(this.reprocesoMenuItem_solicitar_Click);
+            // 
+            // reprocesoMenuItem_recepcionar
+            // 
+            this.reprocesoMenuItem_recepcionar.Name = "reprocesoMenuItem_recepcionar";
+            this.reprocesoMenuItem_recepcionar.Size = new System.Drawing.Size(139, 22);
+            this.reprocesoMenuItem_recepcionar.Text = "Recepcionar";
+            this.reprocesoMenuItem_recepcionar.Click += new System.EventHandler(this.reprocesoMenuItem_recepcionar_Click);
+            // 
+            // reprocesoMenuItem_enviar
+            // 
+            this.reprocesoMenuItem_enviar.Name = "reprocesoMenuItem_enviar";
+            this.reprocesoMenuItem_enviar.Size = new System.Drawing.Size(139, 22);
+            this.reprocesoMenuItem_enviar.Text = "Enviar";
+            this.reprocesoMenuItem_enviar.Click += new System.EventHandler(this.reprocesoMenuItem_enviar_Click);
             // 
             // administracionMenuItem
             // 
@@ -371,7 +488,6 @@
             this._stocker.Name = "_stocker";
             this._stocker.ReadOnly = true;
             this._stocker.Visible = false;
-            this._stocker.Width = 73;
             // 
             // _semielaborado
             // 
@@ -847,7 +963,6 @@
             this.xId.Name = "xId";
             this.xId.ReadOnly = true;
             this.xId.Visible = false;
-            this.xId.Width = 34;
             // 
             // xOperador
             // 
@@ -944,122 +1059,6 @@
             this.status_servidor.Name = "status_servidor";
             this.status_servidor.Size = new System.Drawing.Size(22, 21);
             this.status_servidor.Text = "....";
-            // 
-            // refrescarMenuItem
-            // 
-            this.refrescarMenuItem.Image = global::Control_de_placas.Properties.Resources.ico_recarga;
-            this.refrescarMenuItem.Name = "refrescarMenuItem";
-            this.refrescarMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
-            this.refrescarMenuItem.Size = new System.Drawing.Size(83, 20);
-            this.refrescarMenuItem.Text = "Refrescar";
-            this.refrescarMenuItem.Click += new System.EventHandler(this.refrescarMenuItem_Click);
-            // 
-            // enviarOPMenuItem
-            // 
-            this.enviarOPMenuItem.Image = global::Control_de_placas.Properties.Resources.calculator;
-            this.enviarOPMenuItem.Name = "enviarOPMenuItem";
-            this.enviarOPMenuItem.Size = new System.Drawing.Size(86, 20);
-            this.enviarOPMenuItem.Text = "Enviar OP";
-            this.enviarOPMenuItem.Visible = false;
-            this.enviarOPMenuItem.Click += new System.EventHandler(this.enviarOpMenuItem_Click);
-            // 
-            // paletizarMenuItem
-            // 
-            this.paletizarMenuItem.Image = global::Control_de_placas.Properties.Resources.recepcion_icon_;
-            this.paletizarMenuItem.Name = "paletizarMenuItem";
-            this.paletizarMenuItem.Size = new System.Drawing.Size(79, 20);
-            this.paletizarMenuItem.Text = "Paletizar";
-            this.paletizarMenuItem.Click += new System.EventHandler(this.paletizarMenuItem_Click);
-            // 
-            // filtroMenuItem
-            // 
-            this.filtroMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.filtroMenuItem_nuevo,
-            this.filtroMenuItem_codigo,
-            this.toolStripMenuItem1,
-            this.filtroMenuItem_quitar});
-            this.filtroMenuItem.Image = global::Control_de_placas.Properties.Resources.magnifier;
-            this.filtroMenuItem.Name = "filtroMenuItem";
-            this.filtroMenuItem.Size = new System.Drawing.Size(62, 20);
-            this.filtroMenuItem.Text = "Filtro";
-            // 
-            // filtroMenuItem_nuevo
-            // 
-            this.filtroMenuItem_nuevo.Name = "filtroMenuItem_nuevo";
-            this.filtroMenuItem_nuevo.ShortcutKeys = System.Windows.Forms.Keys.F6;
-            this.filtroMenuItem_nuevo.Size = new System.Drawing.Size(186, 22);
-            this.filtroMenuItem_nuevo.Text = "Nuevo";
-            this.filtroMenuItem_nuevo.Click += new System.EventHandler(this.filtroMenuItem_nuevo_Click);
-            // 
-            // filtroMenuItem_codigo
-            // 
-            this.filtroMenuItem_codigo.Name = "filtroMenuItem_codigo";
-            this.filtroMenuItem_codigo.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
-            this.filtroMenuItem_codigo.Size = new System.Drawing.Size(186, 22);
-            this.filtroMenuItem_codigo.Text = "Filtrar Codigo";
-            this.filtroMenuItem_codigo.Click += new System.EventHandler(this.filtroMenuItem_codigo_Click);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(183, 6);
-            // 
-            // filtroMenuItem_quitar
-            // 
-            this.filtroMenuItem_quitar.Name = "filtroMenuItem_quitar";
-            this.filtroMenuItem_quitar.ShortcutKeys = System.Windows.Forms.Keys.Delete;
-            this.filtroMenuItem_quitar.Size = new System.Drawing.Size(186, 22);
-            this.filtroMenuItem_quitar.Text = "Quitar";
-            this.filtroMenuItem_quitar.Click += new System.EventHandler(this.filtroMenuItem_quitar_Click);
-            // 
-            // recepcionarMenuItem
-            // 
-            this.recepcionarMenuItem.Image = global::Control_de_placas.Properties.Resources.recepcion_icon__;
-            this.recepcionarMenuItem.Name = "recepcionarMenuItem";
-            this.recepcionarMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.recepcionarMenuItem.Size = new System.Drawing.Size(100, 20);
-            this.recepcionarMenuItem.Text = "Recepcionar";
-            this.recepcionarMenuItem.Click += new System.EventHandler(this.recepcionarMenuItem_Click);
-            // 
-            // lotesMenuItem
-            // 
-            this.lotesMenuItem.Image = global::Control_de_placas.Properties.Resources.history;
-            this.lotesMenuItem.Name = "lotesMenuItem";
-            this.lotesMenuItem.Size = new System.Drawing.Size(63, 20);
-            this.lotesMenuItem.Text = "Lotes";
-            this.lotesMenuItem.Click += new System.EventHandler(this.lotesMenuItem_Click);
-            // 
-            // reprocesoMenuItem
-            // 
-            this.reprocesoMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.reprocesoMenuItem_solicitar,
-            this.reprocesoMenuItem_recepcionar,
-            this.reprocesoMenuItem_enviar});
-            this.reprocesoMenuItem.Image = global::Control_de_placas.Properties.Resources.config;
-            this.reprocesoMenuItem.Name = "reprocesoMenuItem";
-            this.reprocesoMenuItem.Size = new System.Drawing.Size(90, 20);
-            this.reprocesoMenuItem.Text = "Reproceso";
-            // 
-            // reprocesoMenuItem_solicitar
-            // 
-            this.reprocesoMenuItem_solicitar.Name = "reprocesoMenuItem_solicitar";
-            this.reprocesoMenuItem_solicitar.Size = new System.Drawing.Size(139, 22);
-            this.reprocesoMenuItem_solicitar.Text = "Solicitar";
-            this.reprocesoMenuItem_solicitar.Click += new System.EventHandler(this.reprocesoMenuItem_solicitar_Click);
-            // 
-            // reprocesoMenuItem_recepcionar
-            // 
-            this.reprocesoMenuItem_recepcionar.Name = "reprocesoMenuItem_recepcionar";
-            this.reprocesoMenuItem_recepcionar.Size = new System.Drawing.Size(139, 22);
-            this.reprocesoMenuItem_recepcionar.Text = "Recepcionar";
-            this.reprocesoMenuItem_recepcionar.Click += new System.EventHandler(this.reprocesoMenuItem_recepcionar_Click);
-            // 
-            // reprocesoMenuItem_enviar
-            // 
-            this.reprocesoMenuItem_enviar.Name = "reprocesoMenuItem_enviar";
-            this.reprocesoMenuItem_enviar.Size = new System.Drawing.Size(139, 22);
-            this.reprocesoMenuItem_enviar.Text = "Enviar";
-            this.reprocesoMenuItem_enviar.Click += new System.EventHandler(this.reprocesoMenuItem_enviar_Click);
             // 
             // Form1
             // 

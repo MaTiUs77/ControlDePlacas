@@ -19,8 +19,7 @@ d.id
 ,d.lote
 ,d.placa
 ,d.cantidad
-,lotes.total
-,lotes.id as id_lote
+,smt.qty as total
 
 ,(
     SELECT SUM(cantidad) as salidas
@@ -35,7 +34,7 @@ d.id
 ) AS salidas
 
 ,(
-    SELECT ( SUM(cantidad) - lotes.total ) as restantes
+    SELECT ( SUM(cantidad) - smt.qty) as restantes
     FROM datos
     WHERE
         modelo = d.modelo
@@ -135,10 +134,10 @@ FROM
 datos d
 
 left join (
-    select id,modelo, lote, total
-    from lotes
-) as lotes
-on d.modelo = lotes.modelo and d.lote = lotes.lote
+    select op,qty
+    from smtdatabase.orden_trabajo
+) as smt
+on smt.op = d.op
 
 ";
             sql = sql + filtros;

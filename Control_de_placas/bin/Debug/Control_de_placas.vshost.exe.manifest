@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="Control_de_placas.exe" version="2.0.0.8" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="Control_de_placas.exe" version="2.0.0.14" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <description asmv2:iconFile="Icons\ico1 (2).ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Control_de_placas.exe" size="634880">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Control_de_placas.exe" size="640512">
       <assemblyIdentity name="Control_de_placas" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>AlQbpaIDTGoh784zeaGLGPS9GQcQagvpbjk0Pl8m1MY=</dsig:DigestValue>
+        <dsig:DigestValue>EnX6VNWL0DRS8BoLQdWRhKU3mjd1NG7ruhYcF40Baf8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -79,14 +79,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="IAServer.dll" size="34304">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="IAServer.dll" size="34816">
       <assemblyIdentity name="IAServer" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>wWPgjcyd8nll1zoV7QeNb2pztpCdRkubifGwCQ3wVbo=</dsig:DigestValue>
+        <dsig:DigestValue>DyrNfQqhQPJsTVjaW5EQXpB7RUHfvSjYrO28djq/7L0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -114,13 +114,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Control_de_placas.exe.config" size="1083">
+  <file name="Control_de_placas.exe.config" size="1090">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>dw/NTeIfCGb8SDKSHw0JRF4fmwr57OqDy4IckKbycrg=</dsig:DigestValue>
+      <dsig:DigestValue>H9Mr2CzbAACscGtjuu8TIrJdHm9b4Sr237HRCO9bxyQ=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Icons\ico_recarga.png" size="679">

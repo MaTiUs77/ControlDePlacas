@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Control_de_placas
@@ -14,7 +15,9 @@ namespace Control_de_placas
 
         public Palet palet = new Palet();
         private Form parent;
-        private bool modeConfirm = false; 
+        private bool modeConfirm = false;
+
+        private TextBox errorLog;
  
         public formPaletizar(Form f)
         {
@@ -24,8 +27,14 @@ namespace Control_de_placas
 
         private void formPaletizar_Load(object sender, EventArgs e)
         {
+            errorLog = errorText;
+
+            palet.dataPalet = dataPalet;
+            palet.detailPalet = detailPalet;
             fillSector();
             txtBarcode.Focus();
+
+            dataPalet.RowsDefaultCellStyle.SelectionBackColor = Color.Transparent;
         }
 
         public void txtBarcode_KeyUp(object sender, KeyEventArgs e)
@@ -38,103 +47,90 @@ namespace Control_de_placas
                 }
                 else
                 {
-                    StockerData();
+                    string inStockerCode = txtBarcode.Text.Trim().ToUpper();
+
+                    if (removeMode.Checked)
+                    {
+                        palet.RemoveFromList(inStockerCode);
+
+                        dataPalet.ClearSelection();
+                        txtBarcode.Text = "";
+                        txtBarcode.Focus();
+                    } else
+                    {
+                        StockerData();
+                    }
                 }
-            }
-        }
-
-        public void AddToPalet(Stocker stk)
-        {
-            if (!palet.OnList(stk))
-            {
-
-                int index = dataPalet.Rows.Add(
-                    stk.service.stocker.barcode,
-                    stk.service.stocker.unidades
-                );
-
-                // Agrego indice de fila a stocker.
-                stk.row = index;
-                palet.AddToList(stk);
-
-                // Carga modelo lote panel y op en palet 
-                detailPalet.Text = string.Concat(
-                    "Modelo: ",
-                    stk.service.smt.modelo, 
-                        System.Environment.NewLine, 
-                    "Lote: ",
-                    stk.service.smt.lote,
-                        System.Environment.NewLine,
-                    "Panel: ",
-                    stk.service.smt.panel,
-                        System.Environment.NewLine,
-                    "Unidades: ",
-                    palet.SumarUnidades());
-                
             }
         }
 
         public void StockerData()
         {
-            Stocker stocker = new Stocker();
+            Stocker stk = new Stocker();
 
             string inStockerCode = txtBarcode.Text.Trim().ToUpper();
-            if (inStockerCode != "")
+            if (inStockerCode != "" && !palet.OnList(inStockerCode) && inStockerCode.StartsWith("STK"))
             {
                 try
                 {
-                    stocker.getInfo(inStockerCode);
-                    if (stocker.exception == null)
+                    stk.getInfo(inStockerCode);
+                    if (stk.exception == null)
                     {
-                        if (stocker.service.stocker.error == null)
+                        if (stk.info.error == null)
                         {
-                            if (stocker.service.stocker.unidades > 0)
+                            if (stk.info.stocker.unidades > 0)
                             {
                                 if (!palet.started)
                                 {
                                     // Cargo palet con datos de primer stocker.
-                                    palet.Init(stocker);
+                                    palet.Init(stk);
                                     btnFinish.Enabled = true;
                                 }
 
                                 if (
-                                    stocker.service.smt.modelo == palet.modelo &&
-                                    stocker.service.smt.lote == palet.lote &&
-                                    stocker.service.smt.panel == palet.panel &&
-                                    stocker.service.stocker.op == palet.op
+                                    stk.info.smt.modelo == palet.modelo &&
+                                    stk.info.smt.lote == palet.lote &&
+                                    stk.info.smt.panel == palet.panel &&
+                                    stk.info.stocker.op == palet.op
                                 )
                                 {
-                                    AddToPalet(stocker);
+                                    palet.AddToPalet(stk);
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Atencion, el stocker (" + stocker.service.stocker.barcode + ") tiene un modelo/op diferente.");
+                                    //MessageBox.Show("Atencion, el stocker (" + stk.info.stocker.barcode + ") tiene un modelo/op diferente.");
+                                    errorLog.Text = "Atencion, el stocker (" + stk.info.stocker.barcode + ") tiene un modelo/op diferente.";
                                 }
                             }
                             else
                             {
-                                MessageBox.Show("El stocker no contiene placas.");
+                                //MessageBox.Show("El stocker no contiene placas.");
+                                errorLog.Text = "El stocker no contiene placas.";
                             }
                         } else
                         {
-                            MessageBox.Show(stocker.service.stocker.error);
+                            //MessageBox.Show(stk.info.error);
+                            errorLog.Text = stk.info.error;
                         }
                     }
                     else
                     {
-                        MessageBox.Show(stocker.exception);
+//                        MessageBox.Show(stk.exception);
+                        errorLog.Text = stk.exception;
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+//                    MessageBox.Show(ex.Message);
+                    errorLog.Text = ex.Message;
                 }
 
                 // Una vez guardado el dato, procedo a liberar el stocker. 
-                stocker = new Stocker();
-                txtBarcode.Text = "";
-                txtBarcode.Focus();
+                stk = new Stocker();
             }
+
+            txtBarcode.Text = "";
+            txtBarcode.Focus();
         }
 
         // Cargar sectores
@@ -174,37 +170,76 @@ namespace Control_de_placas
             }
         }
 
+        private void btnDescontar_click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Realmente quiere descontar placas del stocker?", "Descontar placas", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+
+                string promptValue = Prompt.ShowDialog("Ingrese la cantidad a descontar", "Descontar placas");
+                try
+                {
+                    palet.scrap = int.Parse(promptValue);
+                    if (palet.SumarUnidades() > 0)
+                    {
+                        palet.StockerResume();
+                    }
+                    else
+                    {
+                        palet.scrap = 0;
+                        MessageBox.Show("No se descuentan las placas, porque da un numero negativo");
+                        errorLog.Text = "No se descuentan las placas, porque da un numero negativo";
+                    }
+                } catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    errorLog.Text = ex.Message;
+                }
+            }
+        }
+
         private void PaletConfirm()
         {
-            modeConfirm = true;
-            btnFinish.Enabled = false;
-            btnFinish.Text = "Completar operacion";
-            txtBarcode.BackColor = System.Drawing.ColorTranslator.FromHtml("#8ff470");
-
-            string inStockerCode = txtBarcode.Text.Trim().ToUpper();
-            if (inStockerCode != "")
+            if (palet.CountAll() > 0 && palet.CountAll() == palet.CountDeclared())
             {
-                IEnumerable<Stocker> stocker = palet.stockerList.Where(s => s.service.stocker.barcode == inStockerCode );
-                if (stocker.Count()>0) {
-                    stockerSuccess(stocker.First());
+                removeMode.Visible = false;
+
+                modeConfirm = true;
+                btnFinish.Enabled = false;
+                btnFinish.Text = "Completar operacion";
+                txtBarcode.BackColor = ColorTranslator.FromHtml("#8ff470");
+
+                string inStockerCode = txtBarcode.Text.Trim().ToUpper();
+                if (inStockerCode != "")
+                {
+                    IEnumerable<Stocker> stocker = palet.stockerList.Where(s => s.info.stocker.barcode == inStockerCode );
+                    if (stocker.Count()>0) {
+                        stockerSuccess(stocker.First());
+                    }
                 }
+            } else
+            {
+                removeMode.Visible = true;
+                MessageBox.Show("No se puede iniciar confirmacion, hay stockers con placas sin declarar en la lista.");
+                errorLog.Text = "No se puede iniciar confirmacion, hay stockers con placas sin declarar en la lista.";
             }
 
             txtBarcode.Text = "";
             txtBarcode.Focus();
         }
 
-
         private void stockerSuccess(Stocker stocker) {
-            stocker.confirm = true;
-
-            dataPalet.Rows[stocker.row].DefaultCellStyle.BackColor = System.Drawing.ColorTranslator.FromHtml("#8ff470");
-            dataPalet.ClearSelection();
-
-            if (palet.CountAll() == palet.CountConfirm())
+            if(stocker.isDeclared)
             {
-                btnFinish.Enabled = true;
-                txtBarcode.Enabled = false;
+                stocker.confirm = true;
+
+                dataPalet.Rows[stocker.row].DefaultCellStyle.BackColor = ColorTranslator.FromHtml("#8ff470");
+                dataPalet.ClearSelection();
+
+                if (palet.CountAll() == palet.CountConfirm())
+                {
+                    btnFinish.Enabled = true;
+                    txtBarcode.Enabled = false;
+                }
             }
         }
 
