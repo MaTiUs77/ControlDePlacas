@@ -31,3 +31,7 @@ C:\Users\Core\Desktop\VISUALSTUDIO\VISUALSTUDIO\_FABRICA_\Aplicaciones_con_svn\C
 C:\Users\Core\Desktop\VISUALSTUDIO\VISUALSTUDIO\_FABRICA_\Aplicaciones_con_svn\Control_de_placas\Control_de_placas\obj\Release\Control_de_placas.pdb
 C:\Users\Core\Desktop\VISUALSTUDIO\VISUALSTUDIO\_FABRICA_\Aplicaciones_con_svn\Control_de_placas\Control_de_placas\obj\Release\Control_de_placas.csprojResolveAssemblyReference.cache
 C:\Users\Core\Desktop\VISUALSTUDIO\VISUALSTUDIO\_FABRICA_\Aplicaciones_con_svn\Control_de_placas\Control_de_placas\obj\Release\Control_de_placas.formEnviarOp.resources
+C:\Users\Core\Desktop\VISUALSTUDIO\VISUALSTUDIO\_FABRICA_\Aplicaciones_con_svn\Control_de_placas\Control_de_placas\bin\Release\IAServer.dll
+C:\Users\Core\Desktop\VISUALSTUDIO\VISUALSTUDIO\_FABRICA_\Aplicaciones_con_svn\Control_de_placas\Control_de_placas\bin\Release\Newtonsoft.Json.dll
+C:\Users\Core\Desktop\VISUALSTUDIO\VISUALSTUDIO\_FABRICA_\Aplicaciones_con_svn\Control_de_placas\Control_de_placas\bin\Release\IAServer.pdb
+C:\Users\Core\Desktop\VISUALSTUDIO\VISUALSTUDIO\_FABRICA_\Aplicaciones_con_svn\Control_de_placas\Control_de_placas\bin\Release\Newtonsoft.Json.xml

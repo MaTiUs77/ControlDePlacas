@@ -161,7 +161,7 @@ namespace Control_de_placas
                 {
                     if (stocker.info.stocker.error == null)
                     {
-                        if (stocker.declared.detalle.stocker_declarado)
+                        if (stocker.declared.contenido.declaracion.declarado)
                         {
                             style.BackColor = ColorTranslator.FromHtml("#6de9ff");
                             cell.Value = "Declarado";

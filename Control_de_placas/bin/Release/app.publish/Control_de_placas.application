@@ -14,7 +14,7 @@
     <framework targetVersion="4.5" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Control_de_placas.exe.manifest" size="8559">
+    <dependentAssembly dependencyType="install" codebase="Application Files\Control_de_placas_2_0_0_15\Control_de_placas.exe.manifest" size="8559">
       <assemblyIdentity name="Control_de_placas.exe" version="2.0.0.15" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
