@@ -1,8 +1,9 @@
-﻿using System;
+﻿using Control_de_placas.IAServer;
+using Control_de_placas.IAServer.Mapper.Models;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -12,7 +13,7 @@ namespace Control_de_placas
     {
         public DataGridView dataPalet;
         public TextBox detailPalet;
-        public List<Stocker> stockerList = new List<Stocker>();
+        public List<StockerObj> stockerList = new List<StockerObj>();
         public string modelo = "";
         public string lote = "";
         public string panel = "";
@@ -26,26 +27,21 @@ namespace Control_de_placas
 
         public bool started = false;
 
-        public void Init(Stocker stocker) {
+        public void Init(ControlDePlacasService api) {
             // Cargo por primera vez
-            modelo = stocker.info.smt.modelo;
-            lote = stocker.info.smt.lote;
-            panel = stocker.info.smt.panel;
+            modelo = api.info.smt.modelo;
+            lote = api.info.smt.lote;
+            panel = api.info.smt.panel;
 
-            op = stocker.info.stocker.op;
-            barcode = stocker.info.stocker.barcode;
-            semielaborado = stocker.info.stocker.semielaborado;
+            op = api.info.stocker.op;
+            barcode = api.info.stocker.barcode;
+            semielaborado = api.info.stocker.semielaborado;
 
             started = true;
         }
 
-        public void AddToList(Stocker stocker) 
-        {
-            stockerList.Add(stocker);
-        }
-
         public int? SumarUnidades() {
-            int? total = stockerList.AsEnumerable().Sum(s => s.info.stocker.unidades);
+            int? total = stockerList.AsEnumerable().Sum(s => s.api.info.stocker.unidades);
             return total - scrap;
         }
 
@@ -69,7 +65,7 @@ namespace Control_de_placas
 
         public bool OnList(string stockerBarcode)
         {
-            IEnumerable<Stocker> result = stockerList.Where(s => s.info.stocker.barcode== stockerBarcode);
+            IEnumerable<StockerObj> result = stockerList.Where(s => s.api.info.stocker.barcode == stockerBarcode);
             if (result.Count() == 0)
             {
                 return false;
@@ -84,7 +80,7 @@ namespace Control_de_placas
         {
             if(stockerList.Count() > 0)
             {
-                Stocker result = stockerList.Where(s => s.info.stocker.barcode == stockerBarcode).FirstOrDefault();
+                StockerObj result = stockerList.Where(s => s.api.info.stocker.barcode == stockerBarcode).FirstOrDefault();
                 if (result != null)
                 {
                     dataPalet.Rows[result.row].Visible = false;
@@ -96,25 +92,28 @@ namespace Control_de_placas
 
         public void enviarAll()
         {
-            foreach (Stocker stocker in stockerList)
+            foreach (StockerObj stk in stockerList)
             {
-                Stocker.enviado(stocker.info.stocker.barcode);
+                stk.api.SetRouteApi(stk.api.info.stocker.barcode);
             }
         }
 
-        public async void AddToPalet(Stocker stk)
+        public async void AddToPalet(ControlDePlacasService api)
         {
-            if (!OnList(stk.info.stocker.barcode))
+            if (!OnList(api.info.stocker.barcode))
             {
                 int index = dataPalet.Rows.Add(
-                    stk.info.stocker.barcode,
-                    stk.info.stocker.unidades
+                    api.info.stocker.barcode,
+                    api.info.stocker.unidades
                 );
+
+                StockerObj stk = new StockerObj();
+                stk.api = api;
 
                 // Agrego indice de fila a stocker.
                 stk.row = index;
 
-                AddToList(stk);
+                stockerList.Add(stk);
 
                 StockerResume();
 
@@ -124,20 +123,20 @@ namespace Control_de_placas
 
         public void StockerResume()
         {
-            Stocker stk = stockerList.FirstOrDefault();
+            StockerObj stk = stockerList.FirstOrDefault();
             if (stk != null)
             {
                 detailPalet.Text = string.Concat(
-                stk.info.smt.op,
+                stk.api.info.smt.op,
                     Environment.NewLine,
                 "Modelo: ",
-                stk.info.smt.modelo,
+                stk.api.info.smt.modelo,
                     Environment.NewLine,
                 "Lote: ",
-                stk.info.smt.lote,
+                stk.api.info.smt.lote,
                     Environment.NewLine,
                 "Panel: ",
-                stk.info.smt.panel,
+                stk.api.info.smt.panel,
                     Environment.NewLine,
                 "Unidades: ",
                 SumarUnidades());
@@ -147,42 +146,56 @@ namespace Control_de_placas
             }
         }
 
-        private void StartVerify(Stocker stocker)
+        private void StartVerify(StockerObj stk)
         {
-            DataGridViewCell cell = dataPalet.Rows[stocker.row].Cells["_declarado"];
-            DataGridViewCellStyle style = dataPalet.Rows[stocker.row].DefaultCellStyle;
+            DataGridViewCell cell = dataPalet.Rows[stk.row].Cells["_declarado"];
+            DataGridViewCellStyle style = dataPalet.Rows[stk.row].DefaultCellStyle;
 
             cell.Value = "Verificando...";
+            stk.isDeclared = false;
 
             try
             {
-                stocker.getDeclaredInfo();
-                if (stocker.exception == null)
+                stk.api.VerifyStockerApi(stk.api.info.stocker.barcode);
+                if (stk.api.hasResponse)
                 {
-                    if (stocker.info.stocker.error == null)
+                    if (stk.api.verify.error == null)
                     {
-                        if (stocker.declared.contenido.declaracion.declarado)
+                        if (stk.api.verify.cuarentena.Count() == 0) 
                         {
-                            style.BackColor = ColorTranslator.FromHtml("#6de9ff");
-                            cell.Value = "Declarado";
-                            stocker.isDeclared = true;
+                            if (stk.api.verify.contenido.declaracion.declarado)
+                            {
+                                style.BackColor = ColorTranslator.FromHtml("#6de9ff");
+                                cell.Value = "Declarado";
+                                stk.isDeclared = true;
+                            }
+                            else
+                            {
+                                style.BackColor = ColorTranslator.FromHtml("#ff6730");
+                                cell.Value = "Error en declaraciones";
+                                stk.isDeclared = false;
+                            }
                         }
                         else
                         {
                             style.BackColor = ColorTranslator.FromHtml("#ff6730");
-                            cell.Value = "Error en declaraciones";
+                            cell.Value = string.Format("Atencion! hay {0} placa(s) en cuarentena", stk.api.verify.cuarentena.Count());
+
                         }
+                    } else
+                    {
+                        style.BackColor = ColorTranslator.FromHtml("#ff6730");
+                        cell.Value = stk.api.verify.error;
                     }
                 }
                 else
                 {
                     style.BackColor = ColorTranslator.FromHtml("#ff6730");
-                    cell.Value = stocker.exception;
+                    cell.Value = stk.api.exception;
                 }
             }
             catch (Exception ex)
             {
-                dataPalet.Rows[stocker.row].Cells["_declarado"].Value = ex.Message;
                 style.BackColor = ColorTranslator.FromHtml("#ff6730");
                 cell.Value = ex.Message;
             }

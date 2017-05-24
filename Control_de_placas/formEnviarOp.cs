@@ -1,18 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using Control_de_placas.IAServer;
+using Control_de_placas.IAServer.Mapper;
+using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace Control_de_placas
 {
     public partial class formEnviarOp : Form
     {
-
-        public OP op;
+        private OPInfoMapper currentOp;
         private Form parent;
 
         public formEnviarOp(Form f)
@@ -62,13 +58,13 @@ namespace Control_de_placas
                 int cantidad = int.Parse(inCantidad.Text);
                 // Inserto y reseteo formulario
                 Sql.InsertarDato(
-                    op.service.smt.modelo, 
-                    op.service.smt.lote, 
-                    op.service.smt.panel, 
-                    cantidad, id_destino, 
-                    op.service.smt.op, 
-                    "manual", 
-                    op.service.wip.wip_ot.codigo_producto
+                    currentOp.smt.modelo,
+                    currentOp.smt.lote,
+                    currentOp.smt.panel, 
+                    cantidad, id_destino,
+                    currentOp.smt.op, 
+                    "manual",
+                    currentOp.wip.wip_ot.codigo_producto
                 );
 
                 Form1 form = parent as Form1;
@@ -89,46 +85,71 @@ namespace Control_de_placas
         {
             if (e.KeyCode == Keys.Enter)
             {
+                btnFinish.Enabled = false;
+                inCantidad.Enabled = false;
+
+                currentOp = new OPInfoMapper();
+
+                detailOp.Text = "";
                 try
                 {
-                    op = new OP();
-                    op.getInfo(inOp.Text.ToString());
-                    if (op.exception == null)
-                    {
-                        if (op.service.smt != null)
-                        {
-                            // Carga modelo lote panel y op en palet 
-                            detailOp.Text = string.Concat(
-                                "OP: ",
-                                op.service.smt.op,
-                                    System.Environment.NewLine,
-                                "Modelo: ",
-                                op.service.smt.modelo,
-                                    System.Environment.NewLine,
-                                "Lote: ",
-                                op.service.smt.lote,
-                                    System.Environment.NewLine,
-                                "Panel: ",
-                                op.service.smt.panel,
-                                    System.Environment.NewLine,
-                                "Semielaborado: ",
-                                op.service.wip.wip_ot.codigo_producto);
+                    ControlDePlacasService api = new ControlDePlacasService();
+                    api.OPInfoApi(inOp.Text.ToString());
 
-                            btnFinish.Enabled = true;
-                            inCantidad.Enabled = true;
+                    if (api.hasResponse)
+                    {
+                        if (api.opinfo.error == null)
+                        {
+                            #region OP INFO
+                            if (api.opinfo.smt != null)
+                            {
+                                // Carga modelo lote panel y op en palet 
+                                detailOp.Text = string.Concat(
+                                    "OP: ",
+                                    api.opinfo.smt.op,
+                                        System.Environment.NewLine,
+                                    "Modelo: ",
+                                    api.opinfo.smt.modelo,
+                                        System.Environment.NewLine,
+                                    "Lote: ",
+                                    api.opinfo.smt.lote,
+                                        System.Environment.NewLine,
+                                    "Panel: ",
+                                    api.opinfo.smt.panel,
+                                        System.Environment.NewLine,
+                                    "Semielaborado: ",
+                                    api.opinfo.wip.wip_ot.codigo_producto);
+
+                                btnFinish.Enabled = true;
+                                inCantidad.Enabled = true;
+
+                                currentOp = api.opinfo;
+                            }
+                            else
+                            {
+                                btnFinish.Enabled = false;
+                                inCantidad.Enabled = false;
+
+                                currentOp = new OPInfoMapper();
+
+                                detailOp.Text = "No fue posible obtener datos de OP";
+                            }
+                            #endregion
                         }
                         else
                         {
-                            MessageBox.Show("No fue posible obtener datos de OP");
-                            btnFinish.Enabled = false;
-                            inCantidad.Enabled = false;
+                            detailOp.Text = "Error: " + api.opinfo.error;
                         }
                     }
-                } catch (Exception ex)
+                    else
+                    {
+                        detailOp.Text = "Error: " + api.exception;
+                    }
+                }
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
-
             }
         }
     }

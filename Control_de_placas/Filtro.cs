@@ -12,6 +12,7 @@ namespace Control_de_placas
 
         public string id = "";
         public string ebs = "";
+        public string op = "";
         public string modelo = "";
         public string lote = "";
         public string placa = "";
@@ -81,6 +82,11 @@ namespace Control_de_placas
                 sqlString.Add(" d.ebs= '" + f.ebs+ "' ");
             }
 
+            if (!f.op.Equals(""))
+            {
+                sqlString.Add(" d.op= '" + f.op + "' ");
+            }
+
             switch (f.recepcion)
             {
                 case "R":
@@ -115,6 +121,7 @@ namespace Control_de_placas
 
             Filtro.main.id_destino = "";
             Filtro.main.recepcion = "";
+            Filtro.main.op = "";
         }
 
         public static void limpiarReproceso()
@@ -128,6 +135,7 @@ namespace Control_de_placas
 
             Filtro.reproceso.id_destino = "";
             Filtro.reproceso.recepcion = "";
+            Filtro.reproceso.op = "";
         }
     }
 }

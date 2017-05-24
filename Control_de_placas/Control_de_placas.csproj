@@ -25,7 +25,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>16</ApplicationRevision>
+    <ApplicationRevision>24</ApplicationRevision>
     <ApplicationVersion>2.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -87,7 +87,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
+    <Optimize>false</Optimize>
     <DebugType>pdbonly</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
@@ -101,10 +101,11 @@
     <Reference Include="GenCode128">
       <HintPath>.\GenCode128.dll</HintPath>
     </Reference>
-    <Reference Include="IAServer">
-      <HintPath>..\..\..\..\..\IAServer\IAServer\IAServer\bin\Release\IAServer.dll</HintPath>
-    </Reference>
     <Reference Include="MySql.Data, Version=6.6.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
@@ -132,6 +133,22 @@
     <Compile Include="Forms\formPaletizar.Designer.cs">
       <DependentUpon>formPaletizar.cs</DependentUpon>
     </Compile>
+    <Compile Include="IAServer\Api.cs" />
+    <Compile Include="IAServer\ControlDePlacasService.cs" />
+    <Compile Include="IAServer\Mapper\Models\Wip\PlacaWip.cs" />
+    <Compile Include="IAServer\Mapper\Models\Wip\Wip.cs" />
+    <Compile Include="IAServer\Mapper\Models\Wip\WipOt.cs" />
+    <Compile Include="IAServer\Mapper\OPInfoMapper.cs" />
+    <Compile Include="IAServer\Mapper\Models\Stocker\Cuarentena.cs" />
+    <Compile Include="IAServer\Mapper\SetRouteMapper.cs" />
+    <Compile Include="IAServer\Mapper\Models\Panel.cs" />
+    <Compile Include="IAServer\Mapper\Models\Smt.cs" />
+    <Compile Include="IAServer\Mapper\Models\Stocker\Stocker.cs" />
+    <Compile Include="IAServer\Mapper\Models\Stocker\StockerContenido.cs" />
+    <Compile Include="IAServer\Mapper\Models\Stocker\StockerDeclaracionObject.cs" />
+    <Compile Include="IAServer\Mapper\Models\Stocker\StockerPanelList.cs" />
+    <Compile Include="IAServer\Mapper\InfoStockerMapper.cs" />
+    <Compile Include="IAServer\Mapper\VerifyStockerMapper.cs" />
     <Compile Include="Icons\Consulta.cs" />
     <Compile Include="Email.cs" />
     <Compile Include="Filtro.cs" />
@@ -218,8 +235,7 @@
     <Compile Include="Ingenieria.cs" />
     <Compile Include="Lib\Palet.cs" />
     <Compile Include="Lib\Sql.cs" />
-    <Compile Include="Lib\OP.cs" />
-    <Compile Include="Lib\Util.cs" />
+    <Compile Include="Lib\StockerObj.cs" />
     <Compile Include="Lib\Mysql.cs" />
     <Compile Include="Matix.cs" />
     <Compile Include="Operador.cs" />
@@ -245,8 +261,10 @@
     <Compile Include="Forms\Seguimiento.Designer.cs">
       <DependentUpon>Seguimiento.cs</DependentUpon>
     </Compile>
-    <Compile Include="Lib\Service.cs" />
-    <Compile Include="Lib\Stocker.cs" />
+    <Compile Include="Src\Config\AppConfig.cs" />
+    <Compile Include="Src\Http\Http.cs" />
+    <Compile Include="Src\Service\ServiceJson.cs" />
+    <Compile Include="Src\Service\ServiceXml.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -313,6 +331,7 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Control_de_placas_TemporaryKey.pfx" />
+    <None Include="packages.config" />
     <None Include="placas_devDataSet.xsc">
       <DependentUpon>placas_devDataSet.xsd</DependentUpon>
     </None>

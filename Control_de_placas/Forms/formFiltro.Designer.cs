@@ -47,6 +47,8 @@
             this.lblEstado = new System.Windows.Forms.Label();
             this.comboEbs = new System.Windows.Forms.ComboBox();
             this.labelEbs = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtOp = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // comboPlaca
@@ -118,7 +120,7 @@
             this.FechaHasta.CustomFormat = "dd/MM/yyyy";
             this.FechaHasta.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FechaHasta.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FechaHasta.Location = new System.Drawing.Point(29, 207);
+            this.FechaHasta.Location = new System.Drawing.Point(181, 203);
             this.FechaHasta.Name = "FechaHasta";
             this.FechaHasta.Size = new System.Drawing.Size(121, 24);
             this.FechaHasta.TabIndex = 4;
@@ -127,7 +129,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(26, 191);
+            this.label4.Location = new System.Drawing.Point(178, 187);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(35, 13);
             this.label4.TabIndex = 13;
@@ -137,7 +139,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(26, 148);
+            this.label5.Location = new System.Drawing.Point(26, 187);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(38, 13);
             this.label5.TabIndex = 15;
@@ -148,7 +150,7 @@
             this.FechaDesde.CustomFormat = "dd/MM/yyyy";
             this.FechaDesde.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FechaDesde.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FechaDesde.Location = new System.Drawing.Point(29, 164);
+            this.FechaDesde.Location = new System.Drawing.Point(29, 203);
             this.FechaDesde.Name = "FechaDesde";
             this.FechaDesde.Size = new System.Drawing.Size(121, 24);
             this.FechaDesde.TabIndex = 3;
@@ -158,9 +160,9 @@
             this.btGuardar.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btGuardar.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btGuardar.Location = new System.Drawing.Point(29, 241);
+            this.btGuardar.Location = new System.Drawing.Point(29, 243);
             this.btGuardar.Name = "btGuardar";
-            this.btGuardar.Size = new System.Drawing.Size(121, 45);
+            this.btGuardar.Size = new System.Drawing.Size(121, 30);
             this.btGuardar.TabIndex = 7;
             this.btGuardar.Text = "Filtrar";
             this.btGuardar.UseVisualStyleBackColor = false;
@@ -171,7 +173,7 @@
             this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(29, 294);
+            this.button1.Location = new System.Drawing.Point(181, 243);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(121, 30);
             this.button1.TabIndex = 8;
@@ -245,11 +247,31 @@
             this.labelEbs.TabIndex = 9;
             this.labelEbs.Text = "EBS";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(26, 148);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(22, 13);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "OP";
+            // 
+            // txtOp
+            // 
+            this.txtOp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.txtOp.Location = new System.Drawing.Point(29, 164);
+            this.txtOp.Name = "txtOp";
+            this.txtOp.Size = new System.Drawing.Size(121, 20);
+            this.txtOp.TabIndex = 18;
+            // 
             // formFiltro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(332, 338);
+            this.ClientSize = new System.Drawing.Size(332, 291);
+            this.Controls.Add(this.txtOp);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btGuardar);
             this.Controls.Add(this.label5);
@@ -301,5 +323,7 @@
         private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.ComboBox comboEbs;
         private System.Windows.Forms.Label labelEbs;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtOp;
     }
 }

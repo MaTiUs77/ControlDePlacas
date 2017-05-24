@@ -5,6 +5,7 @@ using System.Text;
 using System.Deployment.Application;
 using System.Windows.Forms;
 using System.IO;
+using Control_de_placas.Src.Config;
 
 namespace Control_de_placas
 {
@@ -26,13 +27,13 @@ namespace Control_de_placas
         // Cargar configuracion
         public static void loadconf()
         {
-            Ingenieria.PATH_LISTAS = Util.AppSettingValue("listas");
+            Ingenieria.PATH_LISTAS = AppConfig.Read("IASERVER", "listas");
 
             // Cargo datos del servidor.
-            Mysql.server = Util.AppSettingValue("mysql_server");
-            Mysql.database = Util.AppSettingValue("mysql_database");
-            Mysql.user = Util.AppSettingValue("mysql_user");
-            Mysql.password = Util.AppSettingValue("mysql_pass");
+            Mysql.server = AppConfig.Read("IASERVER","db_host");
+            Mysql.database = AppConfig.Read("IASERVER", "db_database");
+            Mysql.user = AppConfig.Read("IASERVER", "db_user");
+            Mysql.password = AppConfig.Read("IASERVER", "db_pass");
         }
 
         // Verifica actualizaciones. 

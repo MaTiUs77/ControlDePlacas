@@ -6,6 +6,7 @@ using System.Drawing.Printing;
 using System.Drawing;
 using GenCode128;
 using System.Windows.Forms;
+using Control_de_placas.Src.Config;
 
 namespace Control_de_placas
 {
@@ -82,6 +83,8 @@ namespace Control_de_placas
             StringFormat strFormatLeft = new StringFormat();
             strFormatLeft.Alignment = StringAlignment.Near;
 
+            string zebra = AppConfig.Read("IASERVER","zebra");
+
             float x = leftMargin;
             float y = topMargin;
 
@@ -118,7 +121,7 @@ namespace Control_de_placas
             }
 
             MatrixCode mc = new MatrixCode();
-            Image code = mc.make(op + "[ENTER]" + semielaborado + "[ENTER]PLA[ENTER]" + cantidad + "[ENTER]1[ENTER]P3-UshZebra3", 5, 1);
+            Image code = mc.make(op + "[ENTER]" + semielaborado + "[ENTER]PLA[ENTER]" + cantidad + "[ENTER]"+zebra, 5, 1);
             e.Graphics.DrawImage(code, 250, y+30);
 
             e.Graphics.DrawString("MODELO:", font_celda_var, Brushes.Black, new RectangleF(celda_variable, y, 250, 50), strFormatRight);

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Control_de_placas.Src.Config;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,19 +24,20 @@ namespace Control_de_placas
         private void formConfig_Load(object sender, EventArgs e)
         {
             Aplicacion.formConfig = this;
-            inServer.Text = Util.AppSettingValue("mysql_server");
-            inDatabase.Text = Util.AppSettingValue("mysql_database");
-            inUsuario.Text = Util.AppSettingValue("mysql_user");
-            inClave.Text = Util.AppSettingValue("mysql_pass");
 
-            inListas.Text = Util.AppSettingValue("listas");
+            inServer.Text = AppConfig.Read("IASERVER", "db_host");
+            inDatabase.Text = AppConfig.Read("IASERVER", "db_database");
+            inUsuario.Text = AppConfig.Read("IASERVER", "db_user");
+            inClave.Text = AppConfig.Read("IASERVER", "db_pass");
+
+            inListas.Text = AppConfig.Read("IASERVER", "listas");
         }
         public void guardarConf() {
-            Util.AppSettingSave("mysql_server", inServer.Text);
-            Util.AppSettingSave("mysql_database", inDatabase.Text);
-            Util.AppSettingSave("mysql_user", inUsuario.Text);
-            Util.AppSettingSave("mysql_pass", inClave.Text);
-            Util.AppSettingSave("listas", inListas.Text);
+            AppConfig.Save("IASERVER", "db_host", inServer.Text);
+            AppConfig.Save("IASERVER", "db_database", inDatabase.Text);
+            AppConfig.Save("IASERVER", "db_user", inUsuario.Text);
+            AppConfig.Save("IASERVER", "db_pass", inClave.Text);
+            AppConfig.Save("IASERVER", "listas", inListas.Text);
 
             if (MessageBox.Show("Para cargar la nueva configuracion es necesario reiniciar la aplicacion. Reiniciar?", "Configuracion", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {

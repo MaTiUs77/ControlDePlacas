@@ -112,6 +112,7 @@ order by d.modelo asc
             filtro.id_destino = "";
             filtro.recepcion = "";
             filtro.ebs = "";
+            filtro.op = txtOp.Text;
 
             if (comboDestino.SelectedIndex >= 0)
             {
@@ -148,6 +149,7 @@ order by d.modelo asc
             comboDestino.SelectedIndex = -1;
             comboRecepcion.SelectedIndex = -1;
             comboEbs.SelectedIndex = -1;
+            txtOp.Text = "";
 
             filtro.id = "";
             filtro.modelo = "";
@@ -158,6 +160,7 @@ order by d.modelo asc
             filtro.id_destino = "";
             filtro.recepcion = "";
             filtro.ebs = "";
+            filtro.op = "";
 
             if (lblDestino.Text.Equals("Solicitante"))
             {

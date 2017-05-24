@@ -1,22 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using System.IO;
-using System.Data.OleDb;
-using System.Deployment.Application;
-using IAServerServiceDll;
 
 namespace Control_de_placas
 {
     public partial class Form1 : Form
     {
         private formSplash m_Splash;
-        private Stocker stocker;
 
         public Form1()
         {
@@ -26,7 +19,6 @@ namespace Control_de_placas
         // Al iniciar la aplicacion, verifica actualizaciones, y muestra el splash de login.
         private void Form1_Load(object sender, EventArgs e)
         {
-            stocker = new Stocker();
             Aplicacion.update();
 
             Aplicacion.formMain = this;
@@ -47,8 +39,6 @@ namespace Control_de_placas
         // Muestro/Oculto opciones segun permiso de usuario
         public void startMain()
         {
-            IAServerService.url = Util.AppSettingValue("service");
-
             hideDeclaracionBox();
             toggleAvailableOptions();
             reloadMainGrid();
@@ -227,6 +217,7 @@ namespace Control_de_placas
                 Filtro.main.id_destino = filtro.id_destino;
                 Filtro.main.recepcion = filtro.recepcion;
                 Filtro.main.ebs = filtro.ebs;
+                Filtro.main.op = filtro.op;
 
                 reloadMainGrid();
             }
@@ -241,6 +232,7 @@ namespace Control_de_placas
                 Filtro.reproceso.id_destino = filtro.id_destino;
                 Filtro.reproceso.recepcion = filtro.recepcion;
                 Filtro.reproceso.ebs = filtro.ebs;
+                Filtro.reproceso.op = filtro.op;
                 Filtro.reproceso.id_solicitante = filtro.id_solicitante;
 
                 cargarDevoluciones();
